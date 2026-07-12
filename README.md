@@ -1,8 +1,8 @@
-# Paperpress
+# Composed
 
-Paperpress is a light-only Obsidian theme for focused reading and writing. It gives notes a restrained, paper-like surface with LaTeX-inspired hierarchy, consistent typography across Reading view and Live Preview, and print styling intended for clean PDF exports.
+Composed is a light-only Obsidian theme for focused reading and writing. It gives notes a restrained, paper-like surface with LaTeX-inspired hierarchy, consistent typography across Reading view and Live Preview, and print styling intended for clean PDF exports.
 
-![Paperpress overview](screenshot.png)
+![Composed overview](screenshot.png)
 
 ## Features
 
@@ -13,7 +13,7 @@ Paperpress is a light-only Obsidian theme for focused reading and writing. It gi
 - A4-oriented print and PDF styling
 - Minimal application chrome with invisible desktop edge targets for opening and closing the sidebars
 
-Paperpress uses the text and monospace fonts configured in Obsidian. For a more explicitly TeX-like appearance, select an installed Computer Modern family in **Settings → Appearance → Font**.
+Composed uses the text and monospace fonts configured in Obsidian. For a more explicitly TeX-like appearance, select an installed Computer Modern family in **Settings → Appearance → Font**.
 
 ## Screenshots
 
@@ -31,7 +31,7 @@ Paperpress uses the text and monospace fonts configured in Obsidian. For a more 
 
 ## Using the sidebars
 
-Paperpress hides the standard desktop sidebar buttons to keep the writing surface quiet. The controls are still present as invisible edge targets:
+Composed hides the standard desktop sidebar buttons to keep the writing surface quiet. The controls are still present as invisible edge targets:
 
 - Click the far **left edge**, below the title bar, to toggle the left sidebar.
 - Click the far **right edge**, below the title bar, to toggle the right sidebar.
@@ -41,26 +41,26 @@ Paperpress hides the standard desktop sidebar buttons to keep the writing surfac
 
 ### Community themes
 
-Once Paperpress is available in the Obsidian community directory:
+Once Composed is available in the Obsidian community directory:
 
 1. Open **Settings → Appearance**.
 2. Next to **Themes**, select **Manage**.
-3. Search for “Paperpress,” then select **Install and use**.
+3. Search for “Composed,” then select **Install and use**.
 
 ### Manual installation
 
 1. Download `manifest.json` and `theme.css` from the latest release.
-2. Create `<vault>/.obsidian/themes/Paperpress/`.
+2. Create `<vault>/.obsidian/themes/Composed/`.
 3. Place both files in that folder.
-4. Restart Obsidian, then select **Paperpress** under **Settings → Appearance → Themes**.
+4. Restart Obsidian, then select **Composed** under **Settings → Appearance → Themes**.
 
 ## Print sample
 
-Paperpress includes a two-page [sample PDF](assets/print/example-note.pdf) exported directly from Obsidian. Print output is optimized for A4 paper. For publication-grade typesetting or a different page format, converting the note to LaTeX remains the recommended workflow.
+Composed includes a two-page [sample PDF](assets/print/example-note.pdf) exported directly from Obsidian. Print output is optimized for A4 paper. For publication-grade typesetting or a different page format, converting the note to LaTeX remains the recommended workflow.
 
 ## Design notes
 
-Paperpress intentionally supports only the light color scheme. The invisible desktop edge controls are also intentional; see [Using the sidebars](#using-the-sidebars) before enabling the theme to avoid confusion over the missing sidebar toggle buttons.
+Composed intentionally supports only the light color scheme. The invisible desktop edge controls are also intentional; see [Using the sidebars](#using-the-sidebars) before enabling the theme to avoid confusion over the missing sidebar toggle buttons.
 
 The theme does not override Obsidian’s accent color or font settings. For the best experience, adjust them in **Settings → Appearance** to suit your preferences. The screenshots use `#cf681e` for the accent color, `Times New Roman` for the interface font, and `Latin Modern Roman` for the text font. You may also want to hide the inline title and ribbon—and, optionally, the title bar—for a cleaner interface.
 
@@ -68,8 +68,8 @@ If you are comfortable editing CSS, feel free to review `theme.css` and adapt it
 
 ## Compatibility
 
-Paperpress 1.0.0 requires Obsidian 1.5.0 or later.
+Composed 1.0.0 requires Obsidian 1.5.0 or later.
 
 ## License
 
-Paperpress is available under the [MIT License](LICENSE).
+Composed is available under the [MIT License](LICENSE).
