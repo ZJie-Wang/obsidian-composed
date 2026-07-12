@@ -12,17 +12,8 @@ Paperpress is a light-only Obsidian theme for focused reading and writing. It gi
 - Refined tables, nested lists, blockquotes, callouts, inline code, and syntax highlighting
 - A4-oriented print and PDF styling
 - Minimal application chrome with invisible desktop edge targets for opening and closing the sidebars
-- No remote assets, telemetry, or network requests
 
 Paperpress uses the text and monospace fonts configured in Obsidian. For a more explicitly TeX-like appearance, select an installed Computer Modern family in **Settings → Appearance → Font**.
-
-## Using the sidebars
-
-Paperpress hides the standard desktop sidebar buttons to keep the writing surface quiet. The controls are still present as invisible edge targets:
-
-- Click the far **left edge**, below the title bar, to toggle the left sidebar.
-- Click the far **right edge**, below the title bar, to toggle the right sidebar.
-- Alternatively, run **Toggle left sidebar** or **Toggle right sidebar** from Obsidian’s command palette.
 
 ## Screenshots
 
@@ -37,6 +28,14 @@ Paperpress hides the standard desktop sidebar buttons to keep the writing surfac
 ### Code and quotations
 
 ![Code and quotations](assets/screenshots/code-and-quotation.png)
+
+## Using the sidebars
+
+Paperpress hides the standard desktop sidebar buttons to keep the writing surface quiet. The controls are still present as invisible edge targets:
+
+- Click the far **left edge**, below the title bar, to toggle the left sidebar.
+- Click the far **right edge**, below the title bar, to toggle the right sidebar.
+- Alternatively, run **Toggle left sidebar** or **Toggle right sidebar** from Obsidian’s command palette.
 
 ## Installation
 
@@ -61,7 +60,11 @@ Paperpress includes a two-page [sample PDF](assets/print/example-note.pdf) expor
 
 ## Design notes
 
-Paperpress intentionally supports only the light color scheme. The invisible desktop edge controls are also intentional; see [Using the sidebars](#using-the-sidebars) before enabling the theme.
+Paperpress intentionally supports only the light color scheme. The invisible desktop edge controls are also intentional; see [Using the sidebars](#using-the-sidebars) before enabling the theme to avoid confusion over the missing sidebar toggle buttons.
+
+The theme does not override Obsidian’s accent color or font settings. For the best experience, adjust them in **Settings → Appearance** to suit your preferences. The screenshots use `#cf681e` for the accent color, `Times New Roman` for the interface font, and `Latin Modern Roman` for the text font. You may also want to hide the inline title and ribbon—and, optionally, the title bar—for a cleaner interface.
+
+If you are comfortable editing CSS, feel free to review `theme.css` and adapt it to your preferences, either manually or with the help of an AI coding assistant.
 
 ## Compatibility
 
