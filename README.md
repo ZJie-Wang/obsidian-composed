@@ -70,5 +70,3 @@ Paperpress 1.0.0 requires Obsidian 1.5.0 or later.
 ## License
 
 Paperpress is available under the [MIT License](LICENSE).
-
-Maintainers can follow the [publishing guide](PUBLISHING.md) for the initial community submission and future releases.
