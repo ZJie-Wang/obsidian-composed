@@ -1,6 +1,6 @@
 # Composed
 
-Composed is a light-only Obsidian theme for focused reading and writing. It gives notes a restrained, paper-like surface with LaTeX-inspired hierarchy, consistent typography across Reading view and Live Preview, and print styling intended for clean PDF exports.
+A light mode Obsidian theme for focused reading and writing. It gives notes a restrained, paper-like surface with LaTeX-inspired hierarchy, consistent typography across Reading view and Live Preview, and print styling intended for clean PDF exports.
 
 ## Features
 
@@ -39,8 +39,6 @@ Composed hides the standard desktop sidebar buttons to keep the writing surface 
 
 ### Community themes
 
-Once Composed is available in the Obsidian community directory:
-
 1. Open **Settings → Appearance**.
 2. Next to **Themes**, select **Manage**.
 3. Search for “Composed,” then select **Install and use**.
@@ -54,20 +52,20 @@ Once Composed is available in the Obsidian community directory:
 
 ## Print sample
 
-Composed includes a two-page [sample PDF](assets/print/example-note.pdf) exported directly from Obsidian. Print output is optimized for A4 paper. For publication-grade typesetting or a different page format, converting the note to LaTeX remains the recommended workflow.
+This github repo includes a two-page [sample PDF](assets/print/example-note.pdf) exported directly from Obsidian. Print output is optimized for A4 paper. For publication-grade typesetting or a different page format, converting the note to LaTeX remains the recommended workflow.
 
-## Design notes
+## Notes
 
 Composed intentionally supports only the light color scheme. The invisible desktop edge controls are also intentional; see [Using the sidebars](#using-the-sidebars) before enabling the theme to avoid confusion over the missing sidebar toggle buttons.
 
 The theme does not override Obsidian’s accent color or font settings. For the best experience, adjust them in **Settings → Appearance** to suit your preferences. The screenshots use `#cf681e` for the accent color, `Times New Roman` for the interface font, and `Latin Modern Roman` for the text font. You may also want to hide the inline title and ribbon—and, optionally, the title bar—for a cleaner interface.
 
-If you are comfortable editing CSS, feel free to review `theme.css` and adapt it to your preferences, either manually or with the help of an AI coding assistant.
+If you are comfortable editing CSS, feel free to review `theme.css` and adapt it to your preferences, either manually or with the help of AI agents.
 
 ## Compatibility
 
-Composed 1.0.0 requires Obsidian 1.5.0 or later.
+Obsidian 1.5.0 or later.
 
 ## License
 
-Composed is available under the [MIT License](LICENSE).
+[MIT License](LICENSE).
