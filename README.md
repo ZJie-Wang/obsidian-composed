@@ -2,8 +2,6 @@
 
 Composed is a light-only Obsidian theme for focused reading and writing. It gives notes a restrained, paper-like surface with LaTeX-inspired hierarchy, consistent typography across Reading view and Live Preview, and print styling intended for clean PDF exports.
 
-![Composed overview](screenshot.png)
-
 ## Features
 
 - Paper-like light color palette with a narrow, readable text measure
