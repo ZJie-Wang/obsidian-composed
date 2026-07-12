@@ -16,7 +16,19 @@ Paperpress is a light-only Obsidian theme for focused reading and writing. It gi
 
 Paperpress uses the text and monospace fonts configured in Obsidian. For a more explicitly TeX-like appearance, select an installed Computer Modern family in **Settings → Appearance → Font**.
 
+## Using the sidebars
+
+Paperpress hides the standard desktop sidebar buttons to keep the writing surface quiet. The controls are still present as invisible edge targets:
+
+- Click the far **left edge**, below the title bar, to toggle the left sidebar.
+- Click the far **right edge**, below the title bar, to toggle the right sidebar.
+- Alternatively, run **Toggle left sidebar** or **Toggle right sidebar** from Obsidian’s command palette.
+
 ## Screenshots
+
+### Bullets, prose, and headings
+
+![Bullets, prose, and headings](assets/screenshots/bullets-prose-and-headings.png)
 
 ### Tables and mathematics
 
@@ -43,11 +55,13 @@ Once Paperpress is available in the Obsidian community directory:
 3. Place both files in that folder.
 4. Restart Obsidian, then select **Paperpress** under **Settings → Appearance → Themes**.
 
+## Print sample
+
+Paperpress includes a two-page [sample PDF](assets/print/example-note.pdf) exported directly from Obsidian. Print output is optimized for A4 paper. For publication-grade typesetting or a different page format, converting the note to LaTeX remains the recommended workflow.
+
 ## Design notes
 
-Paperpress intentionally supports only the light color scheme. On desktop, the standard sidebar buttons are replaced by invisible 18-pixel edge targets: click the far left or right edge below the title bar to toggle the corresponding sidebar.
-
-Print output is optimized for A4 paper. For publication-grade typesetting or a different page format, converting the note to LaTeX remains the recommended workflow.
+Paperpress intentionally supports only the light color scheme. The invisible desktop edge controls are also intentional; see [Using the sidebars](#using-the-sidebars) before enabling the theme.
 
 ## Compatibility
 
@@ -56,3 +70,5 @@ Paperpress 1.0.0 requires Obsidian 1.5.0 or later.
 ## License
 
 Paperpress is available under the [MIT License](LICENSE).
+
+Maintainers can follow the [publishing guide](PUBLISHING.md) for the initial community submission and future releases.
