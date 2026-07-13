@@ -67,7 +67,7 @@ The theme does not override Obsidian’s accent color or font settings. For the 
 If you are comfortable editing CSS, feel free to review `theme.css` and adapt it to your preferences, either manually or with the help of AI agents.
 
 > [!warning]
-> Note that the theme applies a fairly aggressive style to callouts, which can cause rendering anomalies when they are used heavily. Personally, I do not recommend extensive use of callouts or placing large amounts of formatted content inside callout blocks, as callouts are not really standard Markdown syntax.
+> Note that the theme applies a fairly aggressive style to callouts to fit my own taste. Personally, I do not recommend extensive use of callouts or placing large amounts of formatted content inside callout blocks, as callouts are not really standard Markdown syntax.
 
 ## Compatibility
 
