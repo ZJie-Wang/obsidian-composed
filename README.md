@@ -15,17 +15,21 @@ Composed uses the text and monospace fonts configured in Obsidian. For a more ex
 
 ## Screenshots
 
-### Bullets, prose, and headings
+### Practical example (Live Preview)
 
-![Bullets, prose, and headings](assets/screenshots/bullets-prose-and-headings.png)
+![Practical example in Live Preview](assets/screenshots/practical-example.png)
 
-### Tables and mathematics
+### Bullets, prose, and headings (Reading view)
 
-![Tables and mathematics](assets/screenshots/tables-and-math.png)
+![Bullets, prose, and headings in Reading view](assets/screenshots/bullets-prose-and-headings.png)
 
-### Code and quotations
+### Tables and mathematics (Reading view)
 
-![Code and quotations](assets/screenshots/code-and-quotation.png)
+![Tables and mathematics in Reading view](assets/screenshots/tables-and-math.png)
+
+### Code and quotations (Reading view)
+
+![Code and quotations in Reading view](assets/screenshots/code-and-quotation.png)
 
 ## Using the sidebars
 
