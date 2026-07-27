@@ -4,7 +4,7 @@
 =======================================================================
 Composed for Obsidian
 =======================================================================
-Version: 1.0.1
+Version: 1.0.2
 Description: Clean, paper-like aesthetic with consistent behavior
              across Reading Mode and Live Preview Mode.
              PDF/Print export optimized for publishable book quality.
@@ -470,7 +470,6 @@ body {
  * Inline code and syntax token colors use the original theme palette.
  */
 
-/* Code stays literal, not typographic. */
 :is(
     .markdown-rendered code,
     .markdown-rendered pre,
