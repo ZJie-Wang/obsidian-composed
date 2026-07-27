@@ -158,7 +158,9 @@ body {
 }
 
 .workspace-leaf-content[data-type="markdown"] .view-header {
-    background-color: var(--paper-bg) !important;
+    --background-primary: var(--paper-bg);
+    --file-header-background: var(--paper-bg);
+    --file-header-background-focused: var(--paper-bg);
 }
 
 /* Active markdown tab matches the paper document surface. */
@@ -174,8 +176,14 @@ body {
     background-color: var(--paper-bg);
 }
 
+.mod-active .workspace-tab-header.is-active {
+    --tab-text-color: var(--interactive-accent);
+    --tab-text-color-active: var(--interactive-accent);
+    --tab-text-color-focused-active-current: var(--interactive-accent);
+    --tab-text-color-focused-highlighted: var(--interactive-accent);
+}
+
 .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title {
-    color: var(--interactive-accent) !important;
     font-weight: 600;
 }
 
@@ -358,7 +366,6 @@ body {
 .markdown-rendered p {
     text-align: var(--paper-prose-align);
     text-align-last: var(--paper-prose-align-last);
-    text-justify: inter-word;
     -webkit-hyphens: var(--paper-prose-hyphens);
     hyphens: var(--paper-prose-hyphens);
 }
@@ -763,9 +770,9 @@ body:not(.is-mobile)
     .workspace
     .sidebar-toggle-button:is(.mod-left, .mod-right)
     .clickable-icon {
-    width: 100% !important;
-    height: 100% !important;
-    min-width: 100% !important;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
     padding: 0;
     cursor: pointer;
     pointer-events: auto;
@@ -954,7 +961,6 @@ body:not(.is-mobile)
         orphans: 3 !important;
         text-align: var(--paper-prose-align) !important;
         text-align-last: var(--paper-prose-align-last) !important;
-        text-justify: inter-word !important;
         -webkit-hyphens: var(--paper-prose-hyphens) !important;
         hyphens: var(--paper-prose-hyphens) !important;
         widows: 3 !important;
