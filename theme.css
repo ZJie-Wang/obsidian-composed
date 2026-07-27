@@ -233,7 +233,7 @@ body {
 .markdown-rendered h1 {
     width: fit-content;
     max-width: 100%;
-    margin: 2.2rem auto 1.95rem;
+    margin: 2.2rem auto 1.95rem !important;
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-header-1 {
@@ -242,7 +242,7 @@ body {
 
 /* Live Preview keeps Markdown blank lines visible, so heading padding is tighter. */
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-header-1 {
-    padding-block: 0.55rem 0.95rem;
+    padding-block: 1.55rem 0.35rem;
 }
 
 /* --- H2: primary section heading --- */
