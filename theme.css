@@ -176,14 +176,10 @@ body {
     background-color: var(--paper-bg);
 }
 
-.mod-active .workspace-tab-header.is-active {
-    --tab-text-color: var(--interactive-accent);
-    --tab-text-color-active: var(--interactive-accent);
+.mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title {
     --tab-text-color-focused-active-current: var(--interactive-accent);
     --tab-text-color-focused-highlighted: var(--interactive-accent);
-}
-
-.mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+    color: var(--interactive-accent);
     font-weight: 600;
 }
 
