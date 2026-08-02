@@ -773,6 +773,10 @@ body:not(.is-mobile)
     pointer-events: auto;
 }
 
+.workspace-tab-header-tab-list {
+    display: none !important;
+}
+
 /* Smooth transitions for interactive elements */
 .workspace-tab-header,
 .nav-file-title,
