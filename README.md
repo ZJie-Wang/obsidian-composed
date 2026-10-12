@@ -44,10 +44,6 @@ Composed hides the standard desktop sidebar buttons to keep the writing surface 
 3. Place both files in that folder.
 4. Restart Obsidian, then select **Composed** under **Settings → Appearance → Themes**.
 
-## Print sample
-
-This github repo includes a two-page [sample PDF](assets/print/example-note.pdf) exported directly from Obsidian. Print output is optimized for A4 paper. For publication-grade typesetting or a different page format, converting the note to LaTeX remains the recommended workflow.
-
 ## Notes
 
 Composed intentionally supports only the light color scheme. The invisible desktop edge controls are also intentional; see [Using the sidebars](#using-the-sidebars) before enabling the theme to avoid confusion over the missing sidebar toggle buttons.
