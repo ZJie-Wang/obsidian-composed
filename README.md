@@ -71,7 +71,7 @@ If you are comfortable editing CSS, feel free to review `theme.css` and adapt it
 
 ## Compatibility
 
-Obsidian 1.5.0 or later.
+Obsidian 1.14.4 or later.
 
 ## License
 

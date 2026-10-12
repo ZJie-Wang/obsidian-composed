@@ -4,7 +4,7 @@
 =======================================================================
 Composed for Obsidian
 =======================================================================
-Version: 1.0.2
+Version: 1.1.0
 Description: Clean, paper-like aesthetic with consistent behavior
              across Reading Mode and Live Preview Mode.
              PDF/Print export optimized for publishable book quality.
@@ -21,8 +21,8 @@ Table of Contents:
   8. Blockquotes
   9. Callouts
   10. UI Cleanup
-  11. Scrollbar
-  12. Print / PDF Export (minimal reset)
+  11. Scrollbars
+  12. Print / PDF Export
 
 Note:
   This theme is designed to be light-only,
@@ -48,43 +48,17 @@ body {
     --paper-quote-text: #555;
 
     /* --- Paper Typography Scale --- */
-    --paper-text-font: var(
-        --font-text,
-        "Latin Modern Roman",
-        "New Computer Modern",
-        "CMU Serif",
-        serif
-    );
-    --paper-mono-font: var(
-        --font-monospace,
-        "Latin Modern Mono",
-        "CMU Typewriter Text",
-        ui-monospace,
-        SFMono-Regular,
-        Menlo,
-        Consolas,
-        monospace
-    );
     --paper-body-line-height: 1.65;
     --paper-prose-align: justify;
     --paper-prose-align-last: start;
     --paper-prose-hyphens: auto;
     --paper-heading-line-height: 1.22;
-    --paper-h1-size: 1.78rem;
-    --paper-h2-size: 1.42rem;
-    --paper-h3-size: 1.18rem;
-    --paper-h4-size: 1.05rem;
-    --paper-h5-size: 0.95rem;
-    --paper-h6-size: 0.88rem;
-    --paper-heading-small-weight: 600;
-
-    /* Mirror the scale into Obsidian's native heading variables. */
-    --h1-size: var(--paper-h1-size);
-    --h2-size: var(--paper-h2-size);
-    --h3-size: var(--paper-h3-size);
-    --h4-size: var(--paper-h4-size);
-    --h5-size: var(--paper-h5-size);
-    --h6-size: var(--paper-h6-size);
+    --h1-size: 1.7rem;
+    --h2-size: 1.4rem;
+    --h3-size: 1.2rem;
+    --h4-size: 1.1rem;
+    --h5-size: 0.9rem;
+    --h6-size: 0.8rem;
     --h1-line-height: var(--paper-heading-line-height);
     --h2-line-height: var(--paper-heading-line-height);
     --h3-line-height: var(--paper-heading-line-height);
@@ -92,11 +66,12 @@ body {
     --h5-line-height: var(--paper-heading-line-height);
     --h6-line-height: var(--paper-heading-line-height);
     --h1-weight: 700;
-    --h2-weight: 700;
-    --h3-weight: 650;
+    --h2-weight: 650;
+    --h3-weight: 625;
     --h4-weight: 600;
-    --h5-weight: var(--paper-heading-small-weight);
-    --h6-weight: var(--paper-heading-small-weight);
+    --h5-weight: 600;
+    --h6-weight: 600;
+    --h4-style: italic;
 
     --file-line-width: 640px;
 
@@ -113,14 +88,23 @@ body {
     --background-primary: var(--app-bg);
     --background-primary-alt: var(--app-bg-alt);
     --background-secondary: var(--sidebar-bg);
-    --background-secondary-alt: var(--sidebar-bg);
     --background-modifier-border: var(--paper-border);
     --background-modifier-border-hover: var(--paper-border-table);
     --text-normal: var(--paper-text);
     --code-background: var(--paper-code-bg);
     --code-normal: var(--paper-text-code);
     --blockquote-border-color: var(--paper-quote-border);
+    --blockquote-border-thickness: 0.5pt;
     --blockquote-color: var(--paper-quote-text);
+    --blockquote-font-style: italic;
+    --blockquote-background-color: transparent;
+
+    --table-header-border-width: 0;
+    --table-header-border-color: var(--paper-border-strong);
+    --table-header-weight: 600;
+    --table-column-first-border-width: 0;
+    --table-column-last-border-width: 0;
+    --table-cell-vertical-alignment: middle;
 
     /* --- Code Syntax Colors --- */
     --code-keyword: #0d47a1;
@@ -151,7 +135,7 @@ body {
 .markdown-preview-view,
 .markdown-rendered,
 .markdown-source-view.mod-cm6 .cm-content {
-    font-family: var(--paper-text-font);
+    font-family: var(--font-text);
     font-kerning: normal;
     font-variant-ligatures: common-ligatures contextual;
     text-rendering: optimizeLegibility;
@@ -176,14 +160,11 @@ body {
     background-color: var(--paper-bg);
 }
 
-.mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title {
-    --tab-text-color-focused-active-current: var(--interactive-accent);
-    --tab-text-color-focused-highlighted: var(--interactive-accent);
-    color: var(--interactive-accent);
-    font-weight: 600;
-}
-
 /* ===== 3. SIDEBAR ===== */
+
+.theme-light {
+    --background-secondary-alt: var(--sidebar-bg);
+}
 
 .workspace-split.mod-left-split .workspace-leaf-content,
 .workspace-split.mod-right-split .workspace-leaf-content {
@@ -208,28 +189,9 @@ body {
     letter-spacing: -0.01em;
 }
 
-/* Let CodeMirror tokens inherit heading sizing; the line owns the scale. */
-.markdown-source-view.mod-cm6
-    :is(
-        .cm-header-1,
-        .cm-header-2,
-        .cm-header-3,
-        .cm-header-4,
-        .cm-header-5,
-        .cm-header-6
-    ) {
-    color: inherit;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-}
-
 /* --- H1: centered paper title --- */
 .markdown-rendered h1,
 .markdown-source-view.mod-cm6 .HyperMD-header-1 {
-    font-size: var(--paper-h1-size);
-    font-weight: var(--h1-weight);
     text-align: center;
     text-wrap: balance;
 }
@@ -237,7 +199,7 @@ body {
 .markdown-rendered h1 {
     width: fit-content;
     max-width: 100%;
-    margin: 0.7rem auto 1.95rem !important;
+    margin: 0.7rem auto 1.95rem;
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-header-1 {
@@ -250,12 +212,6 @@ body {
 }
 
 /* --- H2: primary section heading --- */
-.markdown-rendered h2,
-.markdown-source-view.mod-cm6 .HyperMD-header-2 {
-    font-size: var(--paper-h2-size);
-    font-weight: var(--h2-weight);
-}
-
 .markdown-rendered h2 {
     margin-block: 1.8rem 0.75rem;
 }
@@ -265,12 +221,6 @@ body {
 }
 
 /* --- H3: subsection heading --- */
-.markdown-rendered h3,
-.markdown-source-view.mod-cm6 .HyperMD-header-3 {
-    font-size: var(--paper-h3-size);
-    font-weight: var(--h3-weight);
-}
-
 .markdown-rendered h3 {
     margin-block: 1.45rem 0.55rem;
 }
@@ -280,13 +230,6 @@ body {
 }
 
 /* --- H4: paragraph-level heading --- */
-.markdown-rendered h4,
-.markdown-source-view.mod-cm6 .HyperMD-header-4 {
-    font-size: var(--paper-h4-size);
-    font-style: italic;
-    font-weight: var(--h4-weight);
-}
-
 .markdown-rendered h4 {
     margin-block: 1.2rem 0.45rem;
 }
@@ -302,7 +245,6 @@ body {
 .markdown-source-view.mod-cm6 .HyperMD-header-6 {
     color: var(--text-muted);
     font-variant: small-caps;
-    font-weight: var(--paper-heading-small-weight);
     letter-spacing: 0.05em;
 }
 
@@ -313,20 +255,11 @@ body {
 
 .markdown-source-view.mod-cm6.is-live-preview
     :is(.HyperMD-header-5, .HyperMD-header-6) {
-    padding-block: 0 0;
+    padding-block: 0;
 }
 
-.markdown-rendered h5,
-.markdown-source-view.mod-cm6 .HyperMD-header-5 {
-    font-size: var(--paper-h5-size);
-}
-
-.markdown-rendered h6,
-.markdown-source-view.mod-cm6 .HyperMD-header-6 {
-    font-size: var(--paper-h6-size);
-}
-
-.markdown-rendered > :is(h1, h2, h3, h4, h5, h6):first-child {
+.markdown-rendered > :is(h1, h2, h3, h4, h5, h6):first-child,
+.markdown-preview-section > :first-child > :is(h1, h2, h3, h4, h5, h6) {
     margin-top: 0;
 }
 
@@ -351,7 +284,7 @@ body {
     padding: 1px 2px;
 }
 
-/* --- Adjust line height --- */
+/* Keep prose rhythm out of UI labels and fenced-code defaults. */
 .markdown-source-view.mod-cm6,
 .markdown-preview-view,
 .markdown-source-view.mod-cm6 .cm-content {
@@ -362,15 +295,15 @@ body {
 .markdown-rendered p {
     text-align: var(--paper-prose-align);
     text-align-last: var(--paper-prose-align-last);
-    -webkit-hyphens: var(--paper-prose-hyphens);
     hyphens: var(--paper-prose-hyphens);
 }
 
-/* Keep structured short-form content more readable than forced-justified. */
+/* Paragraphs in loose lists and table cells inherit these too. */
 .markdown-rendered :is(li, th, td) {
-    text-align: start;
+    --paper-prose-align: start;
+    --paper-prose-align-last: auto;
+    --paper-prose-hyphens: manual;
     text-align-last: auto;
-    -webkit-hyphens: manual;
     hyphens: manual;
 }
 
@@ -401,10 +334,7 @@ body {
 }
 
 /* --- List markers --- */
-:is(.markdown-reading-view, .markdown-preview-view, .markdown-rendered)
-    ul
-    > li
-    > .list-bullet::after,
+.markdown-rendered ul > li > .list-bullet::after,
 .markdown-source-view.mod-cm6 .HyperMD-list-line-1 .list-bullet::after {
     /* Bullet */
     height: 5px;
@@ -413,12 +343,7 @@ body {
     background-color: var(--paper-list-marker-color);
 }
 
-:is(.markdown-reading-view, .markdown-preview-view, .markdown-rendered)
-    ul
-    > li
-    > ul
-    > li
-    > .list-bullet::after,
+.markdown-rendered ul > li > ul > li > .list-bullet::after,
 .markdown-source-view.mod-cm6 .HyperMD-list-line-2 .list-bullet::after {
     /* Hollow Bullet */
     height: 4px;
@@ -430,14 +355,7 @@ body {
     border-width: 1px;
 }
 
-:is(.markdown-reading-view, .markdown-preview-view, .markdown-rendered)
-    ul
-    > li
-    > ul
-    > li
-    > ul
-    > li
-    > .list-bullet::after,
+.markdown-rendered ul > li > ul > li > ul > li > .list-bullet::after,
 .markdown-source-view.mod-cm6 .HyperMD-list-line-3 .list-bullet::after {
     /* Hyphen */
     content: "-";
@@ -446,15 +364,13 @@ body {
     background-color: transparent;
     border: none;
     color: var(--paper-list-marker-color);
-    font-family: var(--paper-text-font);
+    font-family: var(--font-text);
     font-size: 0.9em;
     line-height: 1;
 }
 
 /* Ordered numbers read like text; unordered bullets stay slightly quieter. */
-:is(.markdown-reading-view, .markdown-preview-view, .markdown-rendered)
-    ol
-    > li::marker,
+.markdown-rendered ol > li::marker,
 .markdown-source-view.mod-cm6 .cm-formatting-list-ol {
     color: var(--paper-text);
 }
@@ -485,7 +401,7 @@ body {
     padding: 2px 6px;
     border-radius: 3px;
     color: var(--paper-text-code);
-    font-family: var(--paper-mono-font);
+    font-family: var(--font-monospace);
     font-size: 0.9em;
 }
 
@@ -544,125 +460,53 @@ body {
     color: var(--paper-text);
 }
 
-/* --- Inline code in tables (both modes) --- */
-:is(.markdown-rendered, .markdown-source-view.mod-cm6 .cm-embed-block)
-    table
-    code,
-.markdown-source-view.mod-cm6
-    :is(table.cm-table-widget, .cm-table-widget table)
-    code {
-    background-color: var(--paper-code-bg);
-    padding: 2px 6px;
-
-    font-family: var(--paper-mono-font);
-    font-size: 0.9em;
-}
-
 /* ===== 7. TABLES ===== */
 
-/* Table base */
-:is(.markdown-rendered, .markdown-source-view.mod-cm6 .cm-embed-block) table,
-.markdown-source-view.mod-cm6
-    :is(table.cm-table-widget, .cm-table-widget table) {
+/* Live Preview table widgets also carry .markdown-rendered. */
+.markdown-rendered table {
     width: 100%;
-    border-collapse: collapse;
-    display: table;
-    font-family: inherit;
     font-size: 0.95em;
 }
 
-/* Table headers */
-:is(
-        .markdown-rendered,
-        .markdown-source-view.mod-cm6 .cm-embed-block,
-        .markdown-source-view.mod-cm6 .cm-table-widget
-    )
-    th {
-    background-color: transparent;
-    font-family: inherit;
+.markdown-rendered :is(th, td) {
     font-size: inherit;
-    font-weight: 600;
     line-height: inherit;
-    text-align: left;
-    vertical-align: middle;
     border: none;
+    padding: 8px 12px;
+}
+
+.markdown-rendered th {
     border-bottom: 2px solid var(--paper-border-strong);
-    padding: 8px 12px;
 }
 
-/* Table cells */
-:is(
-        .markdown-rendered,
-        .markdown-source-view.mod-cm6 .cm-embed-block,
-        .markdown-source-view.mod-cm6 .cm-table-widget
-    )
-    td {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    vertical-align: middle;
-    border: none;
+.markdown-rendered td {
     border-top: 1px solid var(--paper-border-table);
-    padding: 8px 12px;
 }
 
-/* Give the final body row the same light rule as internal row dividers. */
-:is(
-        .markdown-rendered,
-        .markdown-source-view.mod-cm6 .cm-embed-block,
-        .markdown-source-view.mod-cm6 .cm-table-widget
-    )
-    tbody
-    tr:last-child
-    td {
+.markdown-rendered tbody tr:last-child td {
     border-bottom: 1px solid var(--paper-border-table);
 }
 
-/* Alternating row colors */
-:is(
-        .markdown-rendered,
-        .markdown-source-view.mod-cm6 .cm-embed-block,
-        .markdown-source-view.mod-cm6 .cm-table-widget
-    )
-    tbody
-    tr:nth-of-type(2n) {
+.markdown-rendered tbody tr:nth-child(even) {
     background-color: var(--paper-table-stripe);
 }
 
-/* Live Preview table fixes */
-.markdown-source-view.mod-cm6
-    :is(.cm-embed-block, .cm-table-widget)
-    :is(td, th)
-    :is(.cm-line, .table-cell-wrapper) {
+/* Obsidian keeps editable cells unpadded and sizes their inner wrappers. */
+.markdown-source-view.mod-cm6 .cm-table-widget .table-cell-wrapper {
+    padding: 8px 12px;
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget .cm-line {
     line-height: inherit;
     padding: 0;
 }
 
 /* ===== 8. BLOCKQUOTES ===== */
 
-/* Reading view */
-.markdown-rendered blockquote {
-    border-left: 0.5pt solid var(--paper-quote-border);
-    color: var(--paper-quote-text);
-    font-style: italic;
-}
-
-/* Live Preview / editor text */
-.markdown-source-view.mod-cm6 :is(.cm-line.HyperMD-quote, .HyperMD-quote) {
-    background: transparent;
-    color: var(--paper-quote-text);
-    font-style: italic;
-}
-
-/* The actual quote bar in Live Preview */
-.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before,
-.markdown-source-view.mod-cm6 .cm-blockquote-border:before {
-    border-inline-start: 0.5pt solid var(--paper-quote-border);
-}
-
-/* Optional: if theme applies color directly to the border element */
-.markdown-source-view.mod-cm6 .cm-blockquote-border {
-    border-color: var(--paper-quote-border);
+/* Reading view and quote bars use the native variables above. */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-quote {
+    color: var(--blockquote-color);
+    font-style: var(--blockquote-font-style);
 }
 
 /* ===== 9. CALLOUTS ===== */
@@ -773,10 +617,6 @@ body:not(.is-mobile)
     pointer-events: auto;
 }
 
-.workspace-tab-header-tab-list {
-    display: none !important;
-}
-
 /* Smooth transitions for interactive elements */
 .workspace-tab-header,
 .nav-file-title,
@@ -786,7 +626,7 @@ body:not(.is-mobile)
         color 0.15s ease;
 }
 
-/* Fix cursor jumping issues */
+/* Keep the caret dark on the paper surface. */
 .markdown-source-view.mod-cm6 .cm-line {
     caret-color: var(--paper-text);
 }
@@ -797,355 +637,196 @@ body:not(.is-mobile)
     margin-inline: auto;
 }
 
-/* ===== 11. SCROLLBAR ===== */
-
-/* Minimal scrollbar styling */
-::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+.workspace-tab-header-tab-list {
+    display: none !important;
 }
 
-::-webkit-scrollbar-track {
-    background: transparent;
+/* ===== 11. SCROLLBARS ===== */
+
+/* Obsidian selects native or styled scrollbars for each platform. */
+body:not(.is-mobile) {
+    --scrollbar-width: 4px;
+    --scrollbar-height: 4px;
+    --scrollbar-border-width: 0px;
+    --scrollbar-radius: 3px;
+    --scrollbar-thumb-bg: var(--text-faint);
+    --scrollbar-active-thumb-bg: var(--text-muted);
 }
 
-::-webkit-scrollbar-thumb {
-    background: var(--text-faint);
-    border-radius: 3px;
+/* Non-auto scrollbar-width bypasses WebKit styling, so use it only natively. */
+body:not(.is-mobile):not(.styled-scrollbars) {
+    --scrollbar-native-width: thin;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: var(--text-muted);
-}
-
-/* ===== 12. PRINT / PDF EXPORT — Minimal Reset ===== */
-
-/*
-  This still doesn't make the printed PDF look perfect, but it should be more than enough for quick export. If you're looking for perfect typesetting, I'd recommend converting the file to LaTeX first and then compiling it.
-*/
-
-/* Manual page break helper */
-:is(.markdown-rendered, .markdown-source-view.mod-cm6) .page-break {
-    page-break-before: always;
-    break-before: always;
-    height: 0;
-    margin: 0;
-    padding: 0;
-}
+/* ===== 12. PRINT / PDF EXPORT ===== */
 
 @media print {
-    /*
-    Three dashes to break page (print/export only),
-    this is probably not for everyone, though, I recommend
-    not to use three dashes as just regular breaks.
-    Uncomment the rules below to apply.
-    hr {
-        break-after: page;
-        page-break-after: always;
-        visibility: hidden;
-    }
-    */
-
-    /*
-     * Print/export rules intentionally use !important because Obsidian
-     * and PDF plugins inject layout chrome late in the cascade.
-     */
-
-    /* ── Page Setup ── */
     @page {
-        /* Explicit paper margins: roomier than Obsidian's stripped wrappers. */
         margin: 2.35cm 2.45cm 2.5cm;
         size: A4;
     }
 
-    /* ── Global Reset: remove ALL Obsidian chrome and spacing ── */
-    html,
-    body {
-        background: var(--paper-print-bg, #fff) !important;
-        color: var(--paper-print-text, #1e1e1e) !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
+    /* Native export renders a separate document inside .print. */
+    .print .markdown-rendered {
+        background: var(--paper-print-bg);
+        color: var(--paper-print-text);
+        font-family: var(--font-text);
+        font-size: 11pt;
+        line-height: var(--paper-print-line-height);
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
     }
 
-    /* ── Strip away Obsidian layout wrappers ──
-     * Every container between <body> and the actual content
-     * must be forced to full width with no extra padding/margin so the
-     * @page margin is the ONLY margin the reader sees.
-     */
-    .app-container,
-    .horizontal-main-container,
-    .workspace,
-    .workspace-split,
-    .workspace-leaf,
-    .workspace-leaf-content,
-    .workspace-tabs,
-    .workspace-tab-container,
-    .view-content,
-    .view-header,
-    .view-header-title-container,
-    .markdown-preview-view,
-    .markdown-rendered,
-    .markdown-preview-section,
-    .markdown-preview-sizer,
-    .cm-s-obsidian,
-    .cm-scroller,
-    .cm-sizer,
-    .cm-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        background: var(--paper-print-bg, #fff) !important;
-        box-shadow: none !important;
-        border: none !important;
-        position: static !important;
-        overflow: visible !important;
-        display: block !important;
-        float: none !important;
-        transform: none !important;
+    .print .markdown-preview-view {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+        scrollbar-gutter: auto;
     }
 
-    /* ── Print Typography & Vertical Rhythm ── */
-    :is(.markdown-preview-view, .markdown-rendered) {
-        font-family: var(--paper-text-font) !important;
-        font-size: 11pt !important;
-        line-height: var(--paper-print-line-height) !important;
+    .print .markdown-rendered .page-break {
+        break-before: page;
+        height: 0;
+        margin: 0;
+        padding: 0;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered)
-        :is(h1, h2, h3, h4, h5, h6) {
-        break-after: avoid !important;
-        color: var(--paper-print-text, #1e1e1e) !important;
-        line-height: 1.22 !important;
-        page-break-after: avoid !important;
+    .print .markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
+        break-after: avoid;
+        color: var(--paper-print-text);
+        line-height: 1.22;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) h1 {
-        font-size: 18pt !important;
-        margin: 1.8em auto 1.15em !important;
-        text-align: center !important;
+    .print .markdown-rendered h1 {
+        font-size: 18pt;
+        margin: 1.8em auto 1.15em;
+        text-align: center;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) > h1:first-child {
-        margin-top: 0 !important;
+    .print .markdown-rendered h2 {
+        font-size: 14pt;
+        margin: 1.55em 0 0.65em;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) h2 {
-        font-size: 14pt !important;
-        margin: 1.55em 0 0.65em !important;
+    .print .markdown-rendered h3 {
+        font-size: 12.2pt;
+        margin: 1.25em 0 0.5em;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) h3 {
-        font-size: 12.2pt !important;
-        margin: 1.25em 0 0.5em !important;
+    .print .markdown-rendered h4 {
+        font-size: 11pt;
+        margin: 1em 0 0.4em;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) h4 {
-        font-size: 11pt !important;
-        margin: 1em 0 0.4em !important;
+    .print .markdown-rendered :is(h5, h6) {
+        font-size: 10pt;
+        margin: 0.9em 0 0.35em;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) :is(h5, h6) {
-        font-size: 10pt !important;
-        margin: 0.9em 0 0.35em !important;
+    .print .markdown-rendered > :is(h1, h2, h3, h4, h5, h6):first-child,
+    .print .markdown-rendered
+        > :is(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6):first-child
+        > :is(h1, h2, h3, h4, h5, h6) {
+        margin-top: 0;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) p {
-        margin: 0 0 var(--paper-print-paragraph-gap) !important;
-        orphans: 3 !important;
-        text-align: var(--paper-prose-align) !important;
-        text-align-last: var(--paper-prose-align-last) !important;
-        -webkit-hyphens: var(--paper-prose-hyphens) !important;
-        hyphens: var(--paper-prose-hyphens) !important;
-        widows: 3 !important;
+    .print .markdown-rendered p,
+    .print .markdown-rendered :is(ul, ol) li p {
+        margin: 0 0 var(--paper-print-paragraph-gap);
+        orphans: 3;
+        widows: 3;
+        text-align: var(--paper-prose-align);
+        text-align-last: var(--paper-prose-align-last);
+        hyphens: var(--paper-prose-hyphens);
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) p:has(+ :is(ul, ol)),
-    :is(.markdown-preview-view, .markdown-rendered)
-        .el-p:has(+ :is(.el-ul, .el-ol))
-        > p {
-        margin-bottom: 0.25em !important;
+    .print .markdown-rendered .callout {
+        --paper-prose-align: start;
+        --paper-prose-align-last: auto;
+        --paper-prose-hyphens: manual;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) :is(ul, ol) {
-        margin: 0.2em 0 0.85em 1.2em !important;
-        padding-left: 1.15em !important;
+    .print .markdown-rendered p:has(+ :is(ul, ol)),
+    .print .markdown-rendered li > p:has(+ :is(ul, ol)),
+    .print .markdown-rendered .el-p:has(+ :is(.el-ul, .el-ol)) > p {
+        margin-bottom: 0.25em;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) li {
-        margin-block: 0.16em !important;
+    .print .markdown-rendered :is(ul, ol),
+    .print .markdown-rendered :is(.el-ul, .el-ol) > :is(ul, ol) {
+        margin: 0.2em 0 0.85em 1.2em;
+        padding-left: 1.15em;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) li > :is(ul, ol) {
-        margin-block: 0.12em 0.25em !important;
+    .print .markdown-rendered li {
+        margin-block: 0.16em;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) blockquote {
-        margin: 0.85em 0 0.95em !important;
-        padding-left: 0.9em !important;
+    .print .markdown-rendered li > :is(ul, ol) {
+        margin-block: 0.12em 0.25em;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) :is(table, pre) {
-        margin-block: 1.05em !important;
+    /* Native markers replace decorative spans, but never task checkboxes. */
+    .print .markdown-rendered .list-bullet {
+        display: none;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) table {
-        font-family: inherit !important;
-        font-size: inherit !important;
-        line-height: 1.45 !important;
+    .print .markdown-rendered ul > li:not(.task-list-item) {
+        list-style-type: disc;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) :is(th, td) {
-        font-family: inherit !important;
-        font-size: inherit !important;
-        line-height: inherit !important;
+    .print .markdown-rendered ul ul > li:not(.task-list-item) {
+        list-style-type: circle;
     }
 
-    :is(.markdown-preview-view, .markdown-rendered) :is(code, pre) {
-        font-family: var(--paper-mono-font) !important;
+    .print .markdown-rendered ul ul ul > li:not(.task-list-item) {
+        list-style-type: "- ";
     }
 
-    /* ── Lists / bullets ──
-     * Print/export renderers do not consistently preserve Obsidian's
-     * `.list-bullet` spans. Use native markers in print so bullets keep
-     * the theme's disc / hollow circle / square rhythm everywhere.
-     */
-    :is(
-            .print,
-            #print-preview,
-            .better-export-pdf,
-            .markdown-preview-view,
-            .markdown-rendered
-        )
-        .list-bullet {
-        display: none !important;
+    .print .markdown-rendered ul > li:not(.task-list-item)::marker {
+        color: var(--paper-list-marker-color);
     }
 
-    :is(
-            .print,
-            #print-preview,
-            .better-export-pdf,
-            .markdown-preview-view,
-            .markdown-rendered
-        )
-        ul,
-    :is(
-            .print,
-            #print-preview,
-            .better-export-pdf,
-            .markdown-preview-view,
-            .markdown-rendered
-        )
-        ul.has-list-bullet {
-        list-style-type: disc !important;
+    .print .markdown-rendered ol > li:not(.task-list-item)::marker {
+        color: var(--paper-print-text);
     }
 
-    :is(
-            .print,
-            #print-preview,
-            .better-export-pdf,
-            .markdown-preview-view,
-            .markdown-rendered
-        )
-        ul
-        ul,
-    :is(
-            .print,
-            #print-preview,
-            .better-export-pdf,
-            .markdown-preview-view,
-            .markdown-rendered
-        )
-        ul
-        ul.has-list-bullet {
-        list-style-type: circle !important;
+    .print .markdown-rendered blockquote {
+        margin: 0.85em 0 0.95em;
+        padding-left: 0.9em;
     }
 
-    :is(
-            .print,
-            #print-preview,
-            .better-export-pdf,
-            .markdown-preview-view,
-            .markdown-rendered
-        )
-        ul
-        ul
-        ul,
-    :is(
-            .print,
-            #print-preview,
-            .better-export-pdf,
-            .markdown-preview-view,
-            .markdown-rendered
-        )
-        ul
-        ul
-        ul.has-list-bullet {
-        list-style-type: "- " !important;
+    .print .markdown-rendered :is(table, pre) {
+        margin-block: 1.05em;
     }
 
-    :is(
-            .print,
-            #print-preview,
-            .better-export-pdf,
-            .markdown-preview-view,
-            .markdown-rendered
-        )
-        ul
-        > li::marker {
-        color: var(--paper-list-marker-color) !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
+    .print .markdown-rendered table {
+        font-size: inherit;
+        line-height: 1.45;
     }
 
-    :is(
-            .print,
-            #print-preview,
-            .better-export-pdf,
-            .markdown-preview-view,
-            .markdown-rendered
-        )
-        ol
-        > li::marker {
-        color: var(--paper-print-text, #1e1e1e) !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
+    /* Override the app's important print display while still expanding folds. */
+    .print .markdown-preview-view .callout-content {
+        display: contents !important;
     }
 
-    /* ── Images ── */
-    :is(.markdown-preview-view, .markdown-rendered) img {
-        max-width: 100% !important;
-        height: auto !important;
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-        display: block;
-        margin-inline: auto;
+    .print .markdown-rendered .callout-content > p:first-child {
+        margin: 0;
     }
 
-    /* ── Embedded / Transclusion cleanup ── */
-    .markdown-embed,
-    .internal-embed {
-        border: none !important;
-        box-shadow: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
+    .print .markdown-rendered img {
+        max-width: 100%;
+        height: auto;
+        break-inside: avoid;
     }
 
-    /* ── Better Export PDF plugin compatibility ──
-     * This plugin wraps content differently; these rules
-     * ensure the same full-width behavior.
-     */
-    :is(.print, #print-preview, .better-export-pdf)
-        :is(.markdown-preview-view, .markdown-rendered) {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
+    .print .markdown-rendered :is(.markdown-embed, .internal-embed) {
+        border: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
     }
 }
 
