@@ -15,21 +15,11 @@ Composed uses the text and monospace fonts configured in Obsidian. For a more ex
 
 ## Screenshots
 
-### Practical example (Live Preview)
+![screenshot1](assets/screenshots/lilypond-note.png)
 
-![Practical example in Live Preview](assets/screenshots/practical-example.png)
+![screenshot2](assets/screenshots/bullet-and-tables.png)
 
-### Bullets, prose, and headings (Reading view)
-
-![Bullets, prose, and headings in Reading view](assets/screenshots/bullets-prose-and-headings.png)
-
-### Tables and mathematics (Reading view)
-
-![Tables and mathematics in Reading view](assets/screenshots/tables-and-math.png)
-
-### Code and quotations (Reading view)
-
-![Code and quotations in Reading view](assets/screenshots/code-and-quotation.png)
+![screenshot3](assets/screenshots/practical-example.png)
 
 ## Using the sidebars
 
@@ -62,7 +52,7 @@ This github repo includes a two-page [sample PDF](assets/print/example-note.pdf)
 
 Composed intentionally supports only the light color scheme. The invisible desktop edge controls are also intentional; see [Using the sidebars](#using-the-sidebars) before enabling the theme to avoid confusion over the missing sidebar toggle buttons.
 
-The theme does not override Obsidian’s accent color or font settings. For the best experience, adjust them in **Settings → Appearance** to suit your preferences. The screenshots use `#cf681e` for the accent color, `Times New Roman` for the interface font, and `Latin Modern Roman` for the text font. You may also want to hide the inline title and ribbon—and, optionally, the title bar—for a cleaner interface.
+The theme does not override Obsidian’s accent color or font settings. For the best experience, adjust them in **Settings → Appearance** to suit your preferences. The screenshots use  `Libertinus Serif` for the text font. You may also want to hide the inline title and ribbon—and, optionally, the title bar—for a cleaner interface.
 
 If you are comfortable editing CSS, feel free to review `theme.css` and adapt it to your preferences, either manually or with the help of AI agents.
 
